@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="payment">
+            <group id="erip" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>ЕРИП</label>
+                <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Включено</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="title" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Заголовок</label>
+                </field>
+
+                <field id="TEST_MODE" sortOrder="30" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="0">
+                <label>Использовать тестовый режим</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="SERVICE_ID" translate="label" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Номер услуги</label>
+                    <comment>Можно узнать в личном кабинете сервиса "Экспресс Платежи" в настройках услуги.</comment>
+                    <validate>required-entry</validate>
+                </field>
+				
+                <field id="TOKEN" translate="label" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Токен</label>
+                    <comment>Можно узнать в личном кабинете сервиса "Экспресс Платежи" в настройках услуги.</comment>
+                    <validate>required-entry</validate>
+                </field>
+
+                <field id="USE_SIGNATURE" sortOrder="60" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Использовать цифровую подпись для выставления счетов</label>
+                    <comment>Значение должно совпадать со значением, установленным в личном кабинете сервиса "Экспресс Платежи".</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="SECRET_WORD" translate="label" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Секретное слово</label>
+                    <comment>Задается в личном кабинете, секретное слово должно совпадать с секретным словом, установленным в личном кабинете сервиса "Экспресс Платежи".</comment>
+                </field>
+
+                <field id="NOTIF_URL" translate="label" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Ссылка для уведомлений</label>
+                    <frontend_model>Expresspay\Erip\Model\Comment</frontend_model>
+                </field>
+
+                <field id="USE_SIGNATURE_FOR_NOTIF" sortOrder="90" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Использовать цифровую подпись для уведомлений</label>
+                    <comment>Значение должно совпадать со значением, установленным в личном кабинете сервиса "Экспресс Платежи".</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="SECRET_WORD_FOR_NOTIF" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Секретное слово для уведомлений</label>
+                    <comment>Задается в личном кабинете, секретное слово должно совпадать с секретным словом, установленным в личном кабинете сервиса "Экспресс Платежи".</comment>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                </field>
+
+                <field id="SHOW_QR_CODE" sortOrder="110" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Показывать Qr-код</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="PATH_TO_ERIP" translate="label" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Путь по ветке ЕРИП</label>
+                </field>
+
+                <field id="IS_NAME_EDIT" sortOrder="130" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Разрешено изменять ФИО</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="IS_AMOUNT_EDIT" sortOrder="140" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Разрешено изменять сумму</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="IS_ADDRESS_EDIT" sortOrder="150" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Разрешено изменять адрес</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+            </group>
+        </section>
+    </system>
+</config>

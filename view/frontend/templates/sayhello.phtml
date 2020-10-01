@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @var \Expresspay\Erip\Block\Display $block
+ */
+?>
+<h3>Ваш номер заказа: <?= $block->getFoo(); ?></h3>
+<table style="width: 100%;text-align: left;">
+    <tbody>
+        <tr>
+            <td valign="top" style="text-align:left;">
+                Вам необходимо произвести платеж в любой системе, позволяющей проводить оплату через ЕРИП (пункты банковского обслуживания, банкоматы, платежные терминалы, системы интернет-банкинга, клиент-банкинга и т.п.).
+                <br />
+                <br />1. Для этого в перечне услуг ЕРИП перейдите в раздел:
+                <b><?= $block->getPath(); ?></b>
+                <br />2. В поле "Номер заказа" введите <b></b> и нажмите "Продолжить"
+                <br />3. Укажите сумму для оплаты <b><?= $block->getAmount()?></b>
+                <br />4. Совершить платеж.
+            </td>
+            <?= $block->qrCode()?>
+        </tr>
+    </tbody>
+</table>
+<input type="button" value="Продолжить" onClick= 'location.href ="<?= $block->getBaseUrl()?>"'>
