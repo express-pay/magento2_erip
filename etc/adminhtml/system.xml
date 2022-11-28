@@ -55,7 +55,6 @@
                 <field id="SECRET_WORD_FOR_NOTIF" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Секретное слово для уведомлений</label>
                     <comment>Задается в личном кабинете, секретное слово должно совпадать с секретным словом, установленным в личном кабинете сервиса "Экспресс Платежи".</comment>
-                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
                 </field>
 
                 <field id="SHOW_QR_CODE" sortOrder="110" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="0">
